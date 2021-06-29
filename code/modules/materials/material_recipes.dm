@@ -67,6 +67,8 @@
 			new /datum/stack_recipe("custodial cart", /obj/structure/janitorialcart, BUILD_AMT, time = 120, one_per_turf = 1, on_floor = 1),
 			new /datum/stack_recipe("closet", /obj/structure/closet, BUILD_AMT, time = 15, one_per_turf = 1, on_floor = 1),
 			new /datum/stack_recipe("canister", /obj/machinery/portable_atmospherics/canister, 10, time = 15, one_per_turf = 1, on_floor = 1),
+			new /datum/stack_recipe("target stake", /obj/structure/target_stake, BUILD_AMT, time = 15, one_per_turf = 1, on_floor = 1),
+			new /datum/stack_recipe("shooting target", /obj/item/target, 5, time = 10, one_per_turf = 0, on_floor = 1),
 			new /datum/stack_recipe("dark office chair", /obj/structure/bed/chair/office/dark, BUILD_AMT, one_per_turf = 1, on_floor = 1),
 			new /datum/stack_recipe("light office chair", /obj/structure/bed/chair/office/light, BUILD_AMT, one_per_turf = 1, on_floor = 1),
 			new /datum/stack_recipe("plain comfy chair", /obj/structure/bed/chair/comfy, BUILD_AMT, one_per_turf = 1, on_floor = 1),
@@ -264,6 +266,14 @@
 	recipes += new /datum/stack_recipe_list("[display_name] construction",
 		list(
 			new /datum/stack_recipe("diamond floor tile", /obj/item/stack/tile/diamond, 1, 4, 20)
+		))
+
+/material/stone/marble/generate_recipes()
+	..()
+	recipes += new /datum/stack_recipe_list("[display_name] construction",
+		list(
+			new /datum/stack_recipe("light marble floor tile", /obj/item/stack/tile/marble, 1, 4, 20),
+			new /datum/stack_recipe("dark marble floor tile", /obj/item/stack/tile/marble/dark, 1, 4, 20)
 		))
 
 /material/leather/generate_recipes()

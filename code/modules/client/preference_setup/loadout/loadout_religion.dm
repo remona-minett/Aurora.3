@@ -9,8 +9,17 @@
 	path = /obj/item/clothing/mask/trinary_mask
 
 /datum/gear/religion/trinary/cape
-	display_name = "trinary perfection cape"
+	display_name = "trinary perfection cape selection"
+	description = "A selection of capes worn by adherents to the Trinary Perfection."
 	path = /obj/item/clothing/accessory/poncho/trinary
+
+/datum/gear/religion/trinary/cape/New()
+	..()
+	var/trinarycape = list()
+	trinarycape["trinary perfection cape"] = /obj/item/clothing/accessory/poncho/trinary
+	trinarycape["trinary perfection shoulder cape"] = /obj/item/clothing/accessory/poncho/trinary/shouldercape
+	trinarycape["trinary perfection pellegrina"] = /obj/item/clothing/accessory/poncho/trinary/pellegrina
+	gear_tweaks += new/datum/gear_tweak/path(trinarycape)
 
 /datum/gear/religion/trinary/badge
 	display_name = "trinary perfection brooch"
@@ -65,6 +74,43 @@
 	display_name = "tribunal necklace"
 	path = "/obj/item/clothing/accessory/dominia"
 
+/datum/gear/religion/dominia/medical
+	display_name = "tribunalist medical beret"
+	path = /obj/item/clothing/head/beret/dominia/medical
+	allowed_roles = list("Chief Medical Officer", "Physician", "Surgeon", "Pharmacist", "First Responder", "Medical Intern")
+
 /datum/gear/religion/shaman_staff
 	display_name = "shaman staff"
 	path = /obj/item/cane/shaman
+
+/datum/gear/religion/dominia/robe_consular
+	display_name = "tribunalist consular uniform"
+	description = "The traditional red-black-gold uniform of a priestly member of His Majesty's Diplomatic Service."
+	path = /obj/item/clothing/under/dominia/priest/consular
+	allowed_roles = list("Consular Officer")
+
+/datum/gear/religion/dominia/beret_consular
+	display_name = "tribunalist consular beret"
+	description = "A n elegant and well-tailored gold-and-red beret worn by priestly members of His Majesty's Diplomatic Service."
+	path = /obj/item/clothing/head/beret/dominia/consular
+	allowed_roles = list("Consular Officer")
+
+/datum/gear/religion/dominia/cape_consular
+	display_name = "tribunalist cousular cape"
+	description = "A truly majestic gold and red cape worn by members of the clergy affiliated with His Majesty's Diplomatic Service."
+	path = /obj/item/clothing/accessory/poncho/dominia/consular
+	allowed_roles = list("Consular Officer")
+
+/datum/gear/religion/assunzione/accessory
+	display_name = "luceian amulet"
+	path = "/obj/item/clothing/accessory/assunzione"
+
+/datum/gear/religion/assunzioneorb
+	display_name = "assunzione warding sphere"
+	description = "A religious artefact commonly associated with Luceism."
+	path = "/obj/item/assunzioneorb"
+
+/datum/gear/religion/assunzionesheath
+	display_name = "assunzione warding sphere sheath"
+	description = "A small metal shell designed to hold a warding sphere."
+	path = "/obj/item/storage/assunzionesheath"
